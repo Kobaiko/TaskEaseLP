@@ -449,7 +449,7 @@ export default function LandingPage() {
   return (
     <div className="flex min-h-screen flex-col bg-gray-50 scroll-smooth">
       <head>
-        <link rel="icon" href="/images/favicon.ico" />
+        <link rel="icon" href="public/images/favicon.ico" />
       </head>
       <motion.header 
         className="w-full py-2 bg-white border border-gray-200 rounded-full px-4 mx-auto my-4 shadow-sm max-w-6xl"
