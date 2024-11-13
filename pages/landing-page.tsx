@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
-import { Button } from "@/components/ui/button"
+import Button from '@/components/ui/button'
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
