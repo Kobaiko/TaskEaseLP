@@ -4,7 +4,6 @@ import { ArrowRight, CheckCircle, Clock, Plus, Star, Trash2, X } from 'lucide-re
 import Link from 'next/link'
 import { motion, useAnimation } from 'framer-motion'
 import { useState, useEffect, useCallback } from 'react'
-import Head from 'next/head'
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -456,11 +455,6 @@ function FAQSection() {
 export function LandingPageComponent() {
   return (
     <div className="flex min-h-screen flex-col bg-gray-50 scroll-smooth">
-      <Head>
-        <title>TaskEase - AI-Powered Task Management</title>
-        <meta name="description" content="TaskEase helps you break down complex projects into manageable tasks using AI." />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
-      </Head>
       <div className="w-full py-2 bg-white border border-gray-200 rounded-full px-4 mx-auto my-4 shadow-sm max-w-[95%] sm:max-w-6xl">
         <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
           <Link className="flex items-center gap-0.5" href="#">

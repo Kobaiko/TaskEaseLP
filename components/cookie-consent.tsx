@@ -3,12 +3,16 @@
 import React, { useState, useEffect } from 'react';
 import { X, ChevronRight } from 'lucide-react';
 
+type GtagConsentParams = {
+  'analytics_storage': 'granted' | 'denied';
+};
+
 declare global {
   interface Window {
     gtag?: (
-      command: string,
-      action: string,
-      params?: { [key: string]: any }
+      command: 'consent',
+      action: 'update',
+      params: GtagConsentParams
     ) => void;
   }
 }

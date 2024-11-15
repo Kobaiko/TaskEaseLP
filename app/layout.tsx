@@ -16,8 +16,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "TaskEase - Transform Big Projects into Manageable Steps",
-  description: "TaskEase uses AI to break down your complex tasks into simple, actionable subtasks. Get more done with less stress.",
+  title: "TaskEase - AI-Powered Task Management",
+  description: "TaskEase helps you break down complex projects into manageable tasks using AI.",
   icons: {
     icon: 'favicon.ico',
   },
