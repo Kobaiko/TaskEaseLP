@@ -2,12 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  output: 'export',  // Required for static site generation
+  output: 'export',
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
   },
-  // Ensure trailing slashes for consistent routing
   trailingSlash: true,
+  distDir: 'out',
 }
 
 module.exports = nextConfig

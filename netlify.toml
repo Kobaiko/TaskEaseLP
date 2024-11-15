@@ -3,10 +3,7 @@
   publish = "out"
 
 [build.environment]
-  NEXT_USE_NETLIFY = "true"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 # Ensure proper routing for SPA
 [[redirects]]
