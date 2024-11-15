@@ -457,7 +457,9 @@ export function LandingPageComponent() {
   return (
     <div className="flex min-h-screen flex-col bg-gray-50 scroll-smooth">
       <Head>
-        <link rel="icon" href="images/favicon.ico" />
+        <title>TaskEase - AI-Powered Task Management</title>
+        <meta name="description" content="TaskEase helps you break down complex projects into manageable tasks using AI." />
+        <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <div className="w-full py-2 bg-white border border-gray-200 rounded-full px-4 mx-auto my-4 shadow-sm max-w-[95%] sm:max-w-6xl">
         <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
@@ -554,19 +556,19 @@ export function LandingPageComponent() {
             <div className="flex items-center gap-3">
               <div className="flex -space-x-2 overflow-hidden">
                 <Avatar className="inline-block w-8 h-8 border-2 border-white rounded-full">
-                  <AvatarImage src="https://randomuser.me/api/portraits/men/32.jpg" />
+                  <AvatarImage src="https://randomuser.me/api/portraits/men/15.jpg" />
                   <AvatarFallback className="bg-violet-100 text-violet-600">JM</AvatarFallback>
                 </Avatar>
                 <Avatar className="inline-block w-8 h-8 border-2 border-white rounded-full">
-                  <AvatarImage src="https://randomuser.me/api/portraits/women/44.jpg" />
+                  <AvatarImage src="https://randomuser.me/api/portraits/women/22.jpg" />
                   <AvatarFallback className="bg-pink-100 text-pink-600">SR</AvatarFallback>
                 </Avatar>
                 <Avatar className="inline-block w-8 h-8 border-2 border-white rounded-full">
-                  <AvatarImage src="https://randomuser.me/api/portraits/men/68.jpg" />
+                  <AvatarImage src="https://randomuser.me/api/portraits/men/41.jpg" />
                   <AvatarFallback className="bg-blue-100 text-blue-600">WL</AvatarFallback>
                 </Avatar>
                 <Avatar className="inline-block w-8 h-8 border-2 border-white rounded-full">
-                  <AvatarImage src="https://randomuser.me/api/portraits/women/75.jpg" />
+                  <AvatarImage src="https://randomuser.me/api/portraits/women/56.jpg" />
                   <AvatarFallback className="bg-emerald-100 text-emerald-600">MK</AvatarFallback>
                 </Avatar>
               </div>
