@@ -554,19 +554,19 @@ export function LandingPageComponent() {
             <div className="flex items-center gap-3">
               <div className="flex -space-x-2 overflow-hidden">
                 <Avatar className="inline-block w-8 h-8 border-2 border-white rounded-full">
-                  <AvatarImage src="https://randomuser.me/api/portraits/women/32.jpg" />
+                  <AvatarImage src="https://randomuser.me/api/portraits/men/32.jpg" />
                   <AvatarFallback className="bg-violet-100 text-violet-600">JM</AvatarFallback>
                 </Avatar>
                 <Avatar className="inline-block w-8 h-8 border-2 border-white rounded-full">
-                  <AvatarImage src="https://randomuser.me/api/portraits/men/44.jpg" />
+                  <AvatarImage src="https://randomuser.me/api/portraits/women/44.jpg" />
                   <AvatarFallback className="bg-pink-100 text-pink-600">SR</AvatarFallback>
                 </Avatar>
                 <Avatar className="inline-block w-8 h-8 border-2 border-white rounded-full">
-                  <AvatarImage src="https://randomuser.me/api/portraits/women/68.jpg" />
+                  <AvatarImage src="https://randomuser.me/api/portraits/men/68.jpg" />
                   <AvatarFallback className="bg-blue-100 text-blue-600">WL</AvatarFallback>
                 </Avatar>
                 <Avatar className="inline-block w-8 h-8 border-2 border-white rounded-full">
-                  <AvatarImage src="https://randomuser.me/api/portraits/men/75.jpg" />
+                  <AvatarImage src="https://randomuser.me/api/portraits/women/75.jpg" />
                   <AvatarFallback className="bg-emerald-100 text-emerald-600">MK</AvatarFallback>
                 </Avatar>
               </div>
@@ -584,7 +584,7 @@ export function LandingPageComponent() {
               </div>
               <div className="text-center sm:text-left">
                 <p className="text-2xl font-semibold text-gray-900">4.9/5</p>
-                <p className="text-sm text-gray-600">Average rating</p>
+                <p className="text-xs text-gray-400">Average rating</p>
               </div>
             </div>
           </div>
@@ -617,7 +617,7 @@ export function LandingPageComponent() {
                   name: "Alex Johnson",
                   role: "Project Manager",
                   course: "Task Management Pro",
-                  avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+                  avatar: "https://randomuser.me/api/portraits/men/32.jpg",
                   content: "TaskEase has revolutionized how we manage projects. The AI-powered task breakdown is incredible - it's like having a senior project manager guiding you through complex projects.",
                   verified: true
                 },
@@ -625,7 +625,7 @@ export function LandingPageComponent() {
                   name: "Sarah Lee",
                   role: "Team Leader",
                   course: "Team Collaboration Suite",
-                  avatar: "https://randomuser.me/api/portraits/men/44.jpg",
+                  avatar: "https://randomuser.me/api/portraits/women/44.jpg",
                   content: "I really enjoyed using TaskEase for our team projects. The automated task breakdown and time estimation features have made our planning so much more accurate.",
                   verified: true
                 },
@@ -633,7 +633,7 @@ export function LandingPageComponent() {
                   name: "Michael Chen",
                   role: "Startup Founder",
                   course: "Startup Efficiency Bundle",
-                  avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+                  avatar: "https://randomuser.me/api/portraits/men/68.jpg",
                   content: "After trying various project management tools, I felt most solutions were too mechanical and lacked intelligence. TaskEase's AI-powered approach has transformed how I handle multiple projects.",
                   verified: true
                 },
@@ -641,7 +641,7 @@ export function LandingPageComponent() {
                   name: "Emily Rodriguez",
                   role: "Marketing Director",
                   course: "Campaign Management Toolkit",
-                  avatar: "https://randomuser.me/api/portraits/men/75.jpg",
+                  avatar: "https://randomuser.me/api/portraits/women/75.jpg",
                   content: "TaskEase has streamlined our marketing campaigns. The ability to break down complex projects into manageable tasks has improved our team's productivity significantly.",
                   verified: true
                 }
