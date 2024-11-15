@@ -46,8 +46,8 @@ export default function PrivacyPolicy() {
 
           <h2 className="text-2xl font-semibold mt-6 mb-4">2. How We Use Your Information</h2>
           <ul className="list-disc pl-6 mb-4">
-            <li><strong>Provide Services:</strong> We use your information to operate, maintain, and provide you with TaskEase's task management services.</li>
-            <li><strong>Enhance Experience:</strong> Data is used to personalize and improve the App's features, particularly the AI that breaks tasks into subtasks.</li>
+            <li><strong>Provide Services:</strong> We use your information to operate, maintain, and provide you with TaskEase&apos;s task management services.</li>
+            <li><strong>Enhance Experience:</strong> Data is used to personalize and improve the App&apos;s features, particularly the AI that breaks tasks into subtasks.</li>
             <li><strong>Communication:</strong> We may use your email to provide you with updates about the service, respond to inquiries, and share information regarding changes to the App or our policies.</li>
             <li><strong>Analytics and Improvement:</strong> We may use analytics and third-party cookies to track usage patterns, understand how users interact with the App, and improve our services.</li>
           </ul>
@@ -83,7 +83,7 @@ export default function PrivacyPolicy() {
       </main>
       <footer className="bg-white border-t border-gray-200 mt-12">
         <div className="container mx-auto px-4 py-6 text-center text-sm text-gray-500">
-          © 2024 TaskEase. All rights reserved.
+          &copy; 2024 TaskEase. All rights reserved.
         </div>
       </footer>
     </div>

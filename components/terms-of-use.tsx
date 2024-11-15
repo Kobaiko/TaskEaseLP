@@ -35,10 +35,10 @@ export default function TermsOfUse() {
         <h1 className="text-3xl font-bold mb-6">Terms of Use</h1>
         <p className="text-sm text-gray-500 mb-6">Last Updated: November 10, 2024</p>
         <div className="prose max-w-none">
-          <p>Welcome to TaskEase! By accessing or using https://gettaskease.com (the "Website") or the TaskEase application (the "App"), you agree to these Terms of Use (the "Terms"). If you do not agree, please refrain from using our services.</p>
+          <p>Welcome to TaskEase! By accessing or using https://gettaskease.com (the &ldquo;Website&rdquo;) or the TaskEase application (the &ldquo;App&rdquo;), you agree to these Terms of Use (the &ldquo;Terms&rdquo;). If you do not agree, please refrain from using our services.</p>
           
           <h2 className="text-2xl font-semibold mt-6 mb-4">1. Acceptance of Terms</h2>
-          <p>By creating an account or using our services, you agree to these Terms, and they govern your relationship with TaskEase ("we," "our," or "us"). We may update these Terms periodically. You will be notified of significant changes, but it is your responsibility to review the Terms regularly.</p>
+          <p>By creating an account or using our services, you agree to these Terms, and they govern your relationship with TaskEase (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;). We may update these Terms periodically. You will be notified of significant changes, but it is your responsibility to review the Terms regularly.</p>
 
           <h2 className="text-2xl font-semibold mt-6 mb-4">2. Account and Security</h2>
           <ul className="list-disc pl-6 mb-4">
@@ -70,13 +70,13 @@ export default function TermsOfUse() {
           <p>Your tasks and any information you provide are stored in a protected database. You retain the right to delete your profile and data at any time via your profile page. Upon deletion, all associated data will be removed from our system in accordance with our data retention policies.</p>
 
           <h2 className="text-2xl font-semibold mt-6 mb-4">7. Disclaimer of Warranties</h2>
-          <p>Our services are provided "as is" and "as available." TaskEase disclaims any warranties, including but not limited to fitness for a particular purpose and non-infringement. We do not guarantee that the App will be free from errors or interruptions.</p>
+          <p>Our services are provided &quot;as is&quot; and &quot;as available.&quot; TaskEase disclaims any warranties, including but not limited to fitness for a particular purpose and non-infringement. We do not guarantee that the App will be free from errors or interruptions.</p>
 
           <h2 className="text-2xl font-semibold mt-6 mb-4">8. Limitation of Liability</h2>
           <p>To the fullest extent permitted by law, TaskEase shall not be liable for any indirect, incidental, or consequential damages resulting from your use of our services. Our total liability shall not exceed the amount you have paid, if any, to use the App.</p>
 
           <h2 className="text-2xl font-semibold mt-6 mb-4">9. Termination</h2>
-          <p>We reserve the right to suspend or terminate your access to the App at our discretion, with or without notice, if you violate these Terms or misuse our services.</p>
+          <p>We reserve the right to suspend or terminate your access to the App for any &ldquo;reason,&rdquo; including but not limited to &ldquo;violation&rdquo; of these &ldquo;Terms.&rdquo;</p>
 
           <h2 className="text-2xl font-semibold mt-6 mb-4">10. Governing Law and Dispute Resolution</h2>
           <p>These Terms are governed by the laws of the state of Israel. Any disputes arising from these Terms will be resolved exclusively in the courts of the state of Israel.</p>
@@ -87,7 +87,7 @@ export default function TermsOfUse() {
       </main>
       <footer className="bg-white border-t border-gray-200 mt-12">
         <div className="container mx-auto px-4 py-6 text-center text-sm text-gray-500">
-          © 2024 TaskEase. All rights reserved.
+          &copy; 2024 TaskEase. All rights reserved.
         </div>
       </footer>
     </div>

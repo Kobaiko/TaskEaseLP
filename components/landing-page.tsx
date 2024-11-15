@@ -1,9 +1,9 @@
 'use client'
 
-import { ArrowRight, CheckCircle, Clock, Plus, Sparkles, Star, Trash2, BadgeCheck, X } from 'lucide-react'
+import { ArrowRight, CheckCircle, Clock, Plus, Star, Trash2, BadgeCheck, X } from 'lucide-react'
 import Link from 'next/link'
 import { motion, useAnimation } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Head from 'next/head'
 
 import { Button } from "@/components/ui/button"
@@ -42,26 +42,26 @@ function TaskCard() {
   const controls = useAnimation()
   const [progress, setProgress] = useState(33);
 
-  useEffect(() => {
-    const animateTasks = async () => {
-      await controls.start(i => ({
-        opacity: 1,
-        x: 0,
-        transition: { delay: i * 0.2 }
-      }));
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      await controls.start(i => ({
-        opacity: i === 0 ? 1 : 0.5,
-        x: i === 0 ? 0 : -20,
-        transition: { delay: i * 0.1 }
-      }));
-      setProgress(33);
-    };
+  const animateTasks = useCallback(async () => {
+    await controls.start(i => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: i * 0.2 }
+    }));
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    await controls.start(i => ({
+      opacity: i === 0 ? 1 : 0.5,
+      x: i === 0 ? 0 : -20,
+      transition: { delay: i * 0.1 }
+    }));
+    setProgress(33);
+  }, [controls]);
 
+  useEffect(() => {
     const interval = setInterval(animateTasks, 5000);
     animateTasks(); // Run once immediately
     return () => clearInterval(interval);
-  }, []);  // Empty dependency array means this runs once on mount
+  }, [animateTasks]);
 
   const tasks = [
     { text: "Review previous year's marketing performance data for Q1 and Q4", completed: true, duration: "40m" },
@@ -182,7 +182,7 @@ function CreateTaskDemo() {
     { text: "Research and select appropriate marketing channels for Q1 campaigns", duration: "40m" }
   ]
 
-  const animate = async () => {
+  const animate = useCallback(async () => {
     // Reset
     setDisplayedTitle("")
     setDisplayedDescription("")
@@ -219,11 +219,11 @@ function CreateTaskDemo() {
     await controls.start("visible")
     await new Promise(resolve => setTimeout(resolve, 10000))
     animate()
-  };
+  }, [controls, title, description]);
 
   useEffect(() => {
     animate()
-  }, [controls, title, description])
+  }, [animate, controls, title, description])
 
   return (
     <div className="w-full max-w-sm bg-[#1a1f2e] rounded-lg shadow-2xl shadow-blue-900/30 overflow-hidden">
