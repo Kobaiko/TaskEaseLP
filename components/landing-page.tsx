@@ -459,7 +459,7 @@ export function LandingPageComponent() {
       <Head>
         <title>TaskEase - AI-Powered Task Management</title>
         <meta name="description" content="TaskEase helps you break down complex projects into manageable tasks using AI." />
-        <link rel="icon" href="/images/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
       <div className="w-full py-2 bg-white border border-gray-200 rounded-full px-4 mx-auto my-4 shadow-sm max-w-[95%] sm:max-w-6xl">
         <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
