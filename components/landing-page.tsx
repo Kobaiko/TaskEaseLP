@@ -490,15 +490,9 @@ export function LandingPageComponent() {
               FAQ
             </Link>
           </nav>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center">
             <Link
-              href="/terms"
-              className="hidden sm:inline-block text-sm font-medium text-gray-600 hover:text-gray-900"
-            >
-              Terms
-            </Link>
-            <Link
-              href="/signup"
+              href="https://app.gettaskease.com"
               className="inline-flex items-center justify-center rounded-full bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
             >
               Get Started
@@ -526,7 +520,7 @@ export function LandingPageComponent() {
                   TaskEase uses AI to break down your complex tasks into simple, actionable subtasks. Get more done with less stress.
                 </p>
                 <div className="flex justify-center md:justify-start">
-                  <Link href="/signup" className="inline-block">
+                  <Link href="https://app.gettaskease.com" className="inline-block">
                     <Button className="bg-violet-600 hover:bg-violet-700 text-white">
                       Get Started
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -659,12 +653,12 @@ export function LandingPageComponent() {
 
       <footer className="border-t border-gray-200 bg-white">
         <div className="container flex flex-col gap-2 py-10 px-4 md:px-6 md:h-24 md:flex-row md:items-center md:justify-between md:py-0">
-          <Link className="flex items-center gap-0.5" href="#">
+          <Link className="flex items-center gap-2" href="#">
             <svg
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
+              className="h-6 w-6"
             >
               <defs>
                 <filter id="inner-shadow-footer">
