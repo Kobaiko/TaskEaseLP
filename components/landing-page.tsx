@@ -448,7 +448,7 @@ export function LandingPageComponent() {
   return (
     <div className="flex min-h-screen flex-col bg-gray-50 scroll-smooth">
       <Head>
-        <link rel="icon" href="/images/favicon.ico" />
+        <link rel="icon" href="/public/favicon.ico" />
       </Head>
       <div className="w-full py-2 bg-white border border-gray-200 rounded-full px-4 mx-auto my-4 shadow-sm max-w-[95%] sm:max-w-6xl">
         <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
