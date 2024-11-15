@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, CheckCircle, Clock, Plus, Star, Trash2, BadgeCheck, X } from 'lucide-react'
+import { ArrowRight, CheckCircle, Clock, Plus, Star, Trash2, X } from 'lucide-react'
 import Link from 'next/link'
 import { motion, useAnimation } from 'framer-motion'
 import { useState, useEffect, useCallback } from 'react'
