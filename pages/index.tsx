@@ -185,6 +185,7 @@ function CreateTaskDemo() {
           <div>
             <Input
               value={displayedText}
+              readOnly
               className="bg-gray-800/50 border-gray-700 text-white placeholder-gray-400"
               placeholder="What needs to be done?"
             />
@@ -246,8 +247,14 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
       <Head>
         <title>TaskEase - AI-Powered Task Management</title>
-        <meta name="description" content="Transform your workflow with AI-powered task management" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" href="/favicon.ico" />
+        <meta name="description" content="AI-powered task management system that helps you break down complex projects into manageable tasks." />
+        <meta property="og:title" content="TaskEase - AI-Powered Task Management" />
+        <meta property="og:description" content="AI-powered task management system that helps you break down complex projects into manageable tasks." />
+        <meta property="og:type" content="website" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#1a1f2e" />
       </Head>
 
       <div className="container mx-auto px-4 py-16">
