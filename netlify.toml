@@ -1,6 +1,15 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
+
+[build.environment]
+  NEXT_USE_NETLIFY = "true"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Ensure proper routing for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
