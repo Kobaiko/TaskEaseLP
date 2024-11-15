@@ -19,7 +19,11 @@ export const metadata: Metadata = {
   title: "TaskEase - AI-Powered Task Management",
   description: "TaskEase helps you break down complex projects into manageable tasks using AI.",
   icons: {
-    icon: 'favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/favicon.ico', sizes: '16x16' },
+    ],
+    shortcut: '/favicon.ico',
   },
 };
 
