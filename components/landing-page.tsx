@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, CheckCircle, Clock, Plus, Star, Trash2, BadgeCheck, X } from 'lucide-react'
+import { ArrowRight, CheckCircle, Clock, Plus, Star, Trash2, BadgeCheck, X, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 import { motion, useAnimation } from 'framer-motion'
 import { useState, useEffect, useCallback } from 'react'
@@ -41,8 +41,11 @@ const slideIn = {
 function TaskCard() {
   const controls = useAnimation()
   const [progress, setProgress] = useState(33);
+  const [mounted, setMounted] = useState(false);
 
   const animateTasks = useCallback(async () => {
+    if (!mounted) return;
+    
     await controls.start(i => ({
       opacity: 1,
       x: 0,
@@ -55,13 +58,20 @@ function TaskCard() {
       transition: { delay: i * 0.1 }
     }));
     setProgress(33);
-  }, [controls]);
+  }, [controls, mounted]);
 
   useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+    
     const interval = setInterval(animateTasks, 5000);
-    animateTasks(); // Run once immediately
+    animateTasks();
     return () => clearInterval(interval);
-  }, [animateTasks]);
+  }, [animateTasks, mounted]);
 
   const tasks = [
     { text: "Review previous year's marketing performance data for Q1 and Q4", completed: true, duration: "40m" },
@@ -349,12 +359,8 @@ function HowItWorks() {
   return (
     <div className="container px-4 md:px-6">
       <div className="grid gap-6 lg:grid-cols-[1fr,1.2fr] lg:gap-8 items-center">
-        <div className="w-full max-w-sm mx-auto">
-          <CreateTaskDemo />
-        </div>
-        
         <motion.div 
-          className="space-y-4"
+          className="space-y-4 relative z-20"
           initial="initial"
           animate="animate"
           variants={staggerChildren}
@@ -389,6 +395,10 @@ function HowItWorks() {
             </ul>
           </motion.div>
         </motion.div>
+        
+        <div className="w-full max-w-sm mx-auto relative z-10">
+          <CreateTaskDemo />
+        </div>
       </div>
     </div>
   )
@@ -399,7 +409,7 @@ function FAQSection() {
     <section id="faq" className="w-full py-12 md:py-24 lg:py-32 bg-[#F8F8F8]">
       <div className="container px-4 md:px-6">
         <motion.h2 
-          className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12"
+          className="text-3xl font-bold tracking-tighter sm:text-5xl mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -407,14 +417,13 @@ function FAQSection() {
           Frequently Asked Questions
         </motion.h2>
         <motion.div 
-          className="max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="what-is" className="border-t border-gray-200">
-              <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+              <AccordionTrigger className="text-xl font-semibold hover:no-underline text-left">
                 What is TaskEase?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 text-lg">
@@ -422,7 +431,7 @@ function FAQSection() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="how-works" className="border-t border-gray-200">
-              <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+              <AccordionTrigger className="text-xl font-semibold hover:no-underline text-left">
                 How does TaskEase use AI?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 text-lg">
@@ -430,11 +439,11 @@ function FAQSection() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="accuracy" className="border-t border-gray-200">
-              <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+              <AccordionTrigger className="text-xl font-semibold hover:no-underline text-left">
                 How accurate are the AI-generated time estimates?
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 text-lg">
-                Our AI continuously learns and improves its estimations based on real-world data. While not perfect, many users find the estimates to be surprisingly accurate and helpful for planning.
+                Our AI time estimates are typically accurate within a 15-20% margin. The system learns from actual task completion times and continuously improves its predictions. For complex tasks, we provide a range estimate to account for variables that might affect completion time.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -535,6 +544,52 @@ export function LandingPageComponent() {
           </div>
         </section>
 
+        <motion.div 
+          className="container mx-auto px-4 md:px-6 max-w-[95%] sm:max-w-6xl md:-mt-12 mb-12 relative z-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+        >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-gray-100">
+            <div className="flex items-center gap-3">
+              <div className="flex -space-x-2 overflow-hidden">
+                <Avatar className="inline-block w-8 h-8 border-2 border-white rounded-full">
+                  <AvatarImage src="https://randomuser.me/api/portraits/women/32.jpg" />
+                  <AvatarFallback className="bg-violet-100 text-violet-600">JM</AvatarFallback>
+                </Avatar>
+                <Avatar className="inline-block w-8 h-8 border-2 border-white rounded-full">
+                  <AvatarImage src="https://randomuser.me/api/portraits/men/44.jpg" />
+                  <AvatarFallback className="bg-pink-100 text-pink-600">SR</AvatarFallback>
+                </Avatar>
+                <Avatar className="inline-block w-8 h-8 border-2 border-white rounded-full">
+                  <AvatarImage src="https://randomuser.me/api/portraits/women/68.jpg" />
+                  <AvatarFallback className="bg-blue-100 text-blue-600">WL</AvatarFallback>
+                </Avatar>
+                <Avatar className="inline-block w-8 h-8 border-2 border-white rounded-full">
+                  <AvatarImage src="https://randomuser.me/api/portraits/men/75.jpg" />
+                  <AvatarFallback className="bg-emerald-100 text-emerald-600">MK</AvatarFallback>
+                </Avatar>
+              </div>
+              <div className="text-center sm:text-left">
+                <p className="text-2xl font-semibold text-gray-900">5,072+</p>
+                <p className="text-sm text-gray-600">People transformed their workflow</p>
+              </div>
+            </div>
+            <div className="hidden sm:block w-px h-12 bg-gray-200" />
+            <div className="flex items-center gap-3">
+              <div className="flex">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
+              <div className="text-center sm:text-left">
+                <p className="text-2xl font-semibold text-gray-900">4.9/5</p>
+                <p className="text-sm text-gray-600">Average rating</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         <section id="features" className="w-full py-8 md:py-16 lg:py-24 bg-white">
           <HowItWorks />
         </section>
@@ -562,7 +617,7 @@ export function LandingPageComponent() {
                   name: "Alex Johnson",
                   role: "Project Manager",
                   course: "Task Management Pro",
-                  avatar: "https://i.pravatar.cc/150?img=1",
+                  avatar: "https://randomuser.me/api/portraits/women/32.jpg",
                   content: "TaskEase has revolutionized how we manage projects. The AI-powered task breakdown is incredible - it's like having a senior project manager guiding you through complex projects.",
                   verified: true
                 },
@@ -570,7 +625,7 @@ export function LandingPageComponent() {
                   name: "Sarah Lee",
                   role: "Team Leader",
                   course: "Team Collaboration Suite",
-                  avatar: "https://i.pravatar.cc/150?img=32",
+                  avatar: "https://randomuser.me/api/portraits/men/44.jpg",
                   content: "I really enjoyed using TaskEase for our team projects. The automated task breakdown and time estimation features have made our planning so much more accurate.",
                   verified: true
                 },
@@ -578,7 +633,7 @@ export function LandingPageComponent() {
                   name: "Michael Chen",
                   role: "Startup Founder",
                   course: "Startup Efficiency Bundle",
-                  avatar: "https://i.pravatar.cc/150?img=3",
+                  avatar: "https://randomuser.me/api/portraits/women/68.jpg",
                   content: "After trying various project management tools, I felt most solutions were too mechanical and lacked intelligence. TaskEase's AI-powered approach has transformed how I handle multiple projects.",
                   verified: true
                 },
@@ -586,7 +641,7 @@ export function LandingPageComponent() {
                   name: "Emily Rodriguez",
                   role: "Marketing Director",
                   course: "Campaign Management Toolkit",
-                  avatar: "https://i.pravatar.cc/150?img=47",
+                  avatar: "https://randomuser.me/api/portraits/men/75.jpg",
                   content: "TaskEase has streamlined our marketing campaigns. The ability to break down complex projects into manageable tasks has improved our team's productivity significantly.",
                   verified: true
                 }
@@ -653,7 +708,7 @@ export function LandingPageComponent() {
 
       <footer className="border-t border-gray-200 bg-white">
         <div className="container flex flex-col gap-2 py-10 px-4 md:px-6 md:h-24 md:flex-row md:items-center md:justify-between md:py-0">
-          <Link className="flex items-center gap-2" href="#">
+          <Link className="flex items-center gap-0.5" href="#">
             <svg
               viewBox="0 0 24 24"
               fill="none"
