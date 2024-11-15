@@ -450,7 +450,7 @@ export function LandingPageComponent() {
       <Head>
         <link rel="icon" href="/images/favicon.ico" />
       </Head>
-      <div className="w-full py-2 bg-white border border-gray-200 rounded-full px-4 mx-auto my-4 shadow-sm max-w-6xl">
+      <div className="w-full py-2 bg-white border border-gray-200 rounded-full px-4 mx-auto my-4 shadow-sm max-w-[95%] sm:max-w-6xl">
         <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
           <Link className="flex items-center gap-0.5" href="#">
             <svg
@@ -479,7 +479,7 @@ export function LandingPageComponent() {
             </svg>
             <span className="text-xl font-bold">TaskEase</span>
           </Link>
-          <nav className="flex items-center gap-6">
+          <nav className="hidden sm:flex items-center gap-6">
             <Link href="#features" className="text-sm font-medium text-gray-600 hover:text-gray-900">
               Features
             </Link>
@@ -491,10 +491,18 @@ export function LandingPageComponent() {
             </Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Link href="https://app.gettaskease.com" className="inline-block">
-              <Button className="bg-violet-600 hover:bg-violet-700 text-white rounded-full" size="sm">
-                Get Started
-              </Button>
+            <Link
+              href="/terms"
+              className="hidden sm:inline-block text-sm font-medium text-gray-600 hover:text-gray-900"
+            >
+              Terms
+            </Link>
+            <Link
+              href="/signup"
+              className="inline-flex items-center justify-center rounded-full bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+            >
+              Get Started
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -502,46 +510,28 @@ export function LandingPageComponent() {
 
       <main className="flex-1">
         <section className="w-full py-8 md:py-16 lg:py-24 xl:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6 max-w-[95%] sm:max-w-6xl">
             <motion.div 
-              className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8"
+              className="flex flex-col items-center space-y-6 md:flex-row md:space-y-0 md:space-x-8"
               initial="initial"
               animate="animate"
               variants={staggerChildren}
             >
               <motion.div className="space-y-4 text-center md:text-left md:w-1/2" variants={fadeIn}>
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl xl:text-6xl/none">
                   Transform Big Projects into
                   <span className="text-violet-600"> Manageable Steps</span>
                 </h1>
-                <p className="max-w-[600px] text-gray-500 md:text-xl">
+                <p className="mx-auto md:mx-0 max-w-[600px] text-gray-500 md:text-xl">
                   TaskEase uses AI to break down your complex tasks into simple, actionable subtasks. Get more done with less stress.
                 </p>
-                <Link href="https://app.gettaskease.com" className="inline-block">
-                  <Button className="bg-violet-600 hover:bg-violet-700 text-white">
-                    Get Started
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-                <div className="flex items-center space-x-4 mt-4">
-                  <div className="flex -space-x-3">
-                    {[1, 2, 3, 4, 5].map((index) => (
-                      <Avatar key={index} className="border-2 border-white w-8 h-8">
-                        <AvatarImage src={`https://i.pravatar.cc/100?img=${index + 10}`} alt={`User ${index}`} />
-                        <AvatarFallback>U{index}</AvatarFallback>
-                      </Avatar>
-                    ))}
-                  </div>
-                  <div className="flex flex-col items-start space-y-1">
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-current text-yellow-400" />
-                      ))}
-                    </div>
-                    <span className="text-sm">
-                      <strong className="font-semibold">5,072</strong> people transformed their tasks workflow
-                    </span>
-                  </div>
+                <div className="flex justify-center md:justify-start">
+                  <Link href="/signup" className="inline-block">
+                    <Button className="bg-violet-600 hover:bg-violet-700 text-white">
+                      Get Started
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </div>
               </motion.div>
               <motion.div className="md:w-1/2" variants={fadeIn}>
