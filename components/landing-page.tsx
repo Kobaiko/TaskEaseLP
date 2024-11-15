@@ -616,34 +616,26 @@ export function LandingPageComponent() {
                 {
                   name: "Alex Johnson",
                   role: "Project Manager",
-                  course: "Task Management Pro",
                   avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-                  content: "TaskEase has revolutionized how we manage projects. The AI-powered task breakdown is incredible - it's like having a senior project manager guiding you through complex projects.",
-                  verified: true
+                  content: "TaskEase has revolutionized how we manage projects. The AI-powered task breakdown is incredible - it's like having a senior project manager guiding you through complex projects."
                 },
                 {
                   name: "Sarah Lee",
                   role: "Team Leader",
-                  course: "Team Collaboration Suite",
                   avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-                  content: "I really enjoyed using TaskEase for our team projects. The automated task breakdown and time estimation features have made our planning so much more accurate.",
-                  verified: true
+                  content: "I really enjoyed using TaskEase for our team projects. The automated task breakdown and time estimation features have made our planning so much more accurate."
                 },
                 {
                   name: "Michael Chen",
                   role: "Startup Founder",
-                  course: "Startup Efficiency Bundle",
                   avatar: "https://randomuser.me/api/portraits/men/68.jpg",
-                  content: "After trying various project management tools, I felt most solutions were too mechanical and lacked intelligence. TaskEase's AI-powered approach has transformed how I handle multiple projects.",
-                  verified: true
+                  content: "After trying various project management tools, I felt most solutions were too mechanical and lacked intelligence. TaskEase's AI-powered approach has transformed how I handle multiple projects."
                 },
                 {
                   name: "Emily Rodriguez",
                   role: "Marketing Director",
-                  course: "Campaign Management Toolkit",
                   avatar: "https://randomuser.me/api/portraits/women/75.jpg",
-                  content: "TaskEase has streamlined our marketing campaigns. The ability to break down complex projects into manageable tasks has improved our team's productivity significantly.",
-                  verified: true
+                  content: "TaskEase has streamlined our marketing campaigns. The ability to break down complex projects into manageable tasks has improved our team's productivity significantly."
                 }
               ].map((testimonial, index) => (
                 <motion.div key={index} variants={fadeIn}>
@@ -655,14 +647,10 @@ export function LandingPageComponent() {
                           <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
                         </Avatar>
                         <div className="space-y-1">
-                          <div className="flex items-center">
-                            <h3 className="font-semibold">{testimonial.name}</h3>
-                            {testimonial.verified && (
-                              <BadgeCheck className="h-4 w-4 ml-1 text-blue-500" aria-label="Verified user" />
-                            )}
+                          <div className="font-semibold text-gray-900">
+                            {testimonial.name}
                           </div>
                           <p className="text-sm text-gray-500">{testimonial.role}</p>
-                          <p className="text-xs text-gray-400">{testimonial.course}</p>
                         </div>
                       </div>
                       <p className="mt-4 text-gray-600 text-sm leading-relaxed">
